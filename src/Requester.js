@@ -1,4 +1,4 @@
-import { ExpressionResolver as Resolver } from "@default-js/defaultjs-expression-language";
+import Resolver from "@default-js/defaultjs-expression-language/src/ExpressionResolver";
 
 const buildURL = async (context, url, search, hash) => {
 	const result = new URL(await Resolver.resolveText(url, context, url), location.origin);
@@ -9,7 +9,12 @@ const buildURL = async (context, url, search, hash) => {
 
 		for (let key in search) {
 			const value = search[key];
-			if (value && typeof value === "string") params.append(key, await Resolver.resolveText(value, context, value));
+			if (typeof value === "string") params.append(key, await Resolver.resolveText(value, context, value));
+			else if (value instanceof Array) {
+				for (let item of value) {
+					if (typeof item === "string") params.append(key, await Resolver.resolveText(item, context, item));
+				}
+			}
 		}
 	}
 
@@ -29,7 +34,12 @@ const buildHeaders = async (context, headers) => {
 	if (headers) {
 		for (let key in headers) {
 			const value = headers[key];
-			if (value && typeof value === "string") result.append(key, await Resolver.resolveText(value, context, value));
+			if (typeof value === "string") result.append(key, await Resolver.resolveText(value, context, value));
+			else if (value instanceof Array) {
+				for (let item of value) {
+					if (typeof item === "string") result.append(key, await Resolver.resolveText(item, context, item));
+				}
+			}
 		}
 	}
 
@@ -43,7 +53,7 @@ const buildBody = async (context, body) => {
 };
 
 class Requester {
-	constructor({ url, method = "get", search = null, hash = null, headers = null, body = null, credentials = null, mode = null, cache = null, redirect = null, referrer = null, referrerPolicy = null }) {
+	constructor({ url, method = "get", search, hash, headers, body, credentials, mode, cache, redirect, referrer, referrerPolicy }) {
 		this.url = url;
 		this.method = method;
 		this.search = search;
