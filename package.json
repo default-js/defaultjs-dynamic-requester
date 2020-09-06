@@ -2,7 +2,7 @@
 	"name": "@default-js/defaultjs-dynamic-requester",
 	"buildname": "defaultjs-dynamic-requester",
 	"version": "1.0.0-beta.1",
-	"description": "Predefine requests as an template and finalize the request with a data context.",
+	"description": "Predefine requests as a template and finalize/execute the request with a given context.",
 	"main": "./index.js",
 	"scripts": {
 		"build:only": "webpack --config webpack.prod.js && webpack --config webpack.dev.js",
