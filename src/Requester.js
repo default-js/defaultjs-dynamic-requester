@@ -1,7 +1,7 @@
 import Resolver from "@default-js/defaultjs-expression-language/src/ExpressionResolver";
 
 const buildURL = async (context, url, search, hash) => {
-	const result = new URL(await Resolver.resolveText(url, context, url), location.origin);
+	const result = new URL(await Resolver.resolveText(url, context, url), location.href);
 
 	if (search) {
 		if (!result.searchParams) result.searchParams = new URLSearchParams();
