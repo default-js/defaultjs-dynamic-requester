@@ -1,11 +1,11 @@
 {
 	"name": "@default-js/defaultjs-dynamic-requester",
 	"buildname": "defaultjs-dynamic-requester",
-	"version": "1.0.0-beta.3",
+	"version": "1.0.0",
 	"description": "Predefine requests as a template and finalize/execute the request with a given context.",
 	"main": "./index.js",
 	"scripts": {
-		"build:only": "webpack --config webpack.prod.js && webpack --config webpack.dev.js",
+		"build-only": "webpack --config webpack.prod.js && webpack --config webpack.dev.js",
 		"build": "npm test && webpack --config webpack.prod.js && webpack --config webpack.dev.js",
 		"//dev:live": "webpack-dev-server --open --config webpack.dev-server.js && npm run test:live",
 		"dev:live": "webpack-dev-server --open --config webpack.dev-server.js",
@@ -17,21 +17,21 @@
 	"author": "Frank Schüler",
 	"license": "MIT",
 	"devDependencies": {
-		"karma": "^5.2.2",
+		"karma": "^6.3.4",
 		"karma-chrome-launcher": "^3.1.0",
 		"karma-coverage": "^2.0.3",
-		"karma-firefox-launcher": "^1.3.0",
+		"karma-firefox-launcher": "^2.1.1",
 		"karma-html2js-preprocessor": "^1.1.0",
 		"karma-jasmine": "^4.0.1",
 		"karma-safari-launcher": "^1.0.0",
-		"karma-sourcemap-loader": "^0.3.7",
-		"karma-webpack": "^4.0.2",
-		"puppeteer": "^2.1.1",
+		"karma-sourcemap-loader": "^0.3.8",
+		"karma-webpack": "^5.0.0",
+		"puppeteer": "^10.0.0",
 		"replace-in-file-webpack-plugin": "^1.0.6",
-		"webpack": "^4.44.2",
-		"webpack-cli": "^3.3.12",
-		"webpack-dev-server": "^3.11.0",
-		"webpack-merge": "^4.2.2"
+		"webpack": "^5.40.0",
+		"webpack-cli": "^4.7.2",
+		"webpack-dev-server": "^4.2.1",
+		"webpack-merge": "^5.8.0"
 	},
 	"repository": {
 		"type": "git",
@@ -42,8 +42,7 @@
 	},
 	"homepage": "https://github.com/default-js/defaultjs-dynamic-requester#readme",
 	"dependencies": {
-		"@default-js/defaultjs-common-utils": "^0.6.0",
-		"@default-js/defaultjs-expression-language": "^1.0.0-beta.12"
+		"@default-js/defaultjs-expression-language": "latest"
 	},
 	"directories": {
 		"test": "test"

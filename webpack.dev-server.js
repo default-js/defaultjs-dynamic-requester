@@ -1,6 +1,6 @@
 const path = require("path");
 const webpack = require("webpack");
-const merge = require("webpack-merge");
+const { merge } = require("webpack-merge");
 const common = require("./webpack.common.js");
 const project = require("./package.json");
 
@@ -13,9 +13,8 @@ module.exports = merge(common, {
 	devtool: "inline-source-map",
 	watch: true,
 	devServer: {
-		contentBase: "./webcontent",
+		static: ["WebContent"],
 		hot: true,
-		quiet: true,
 		port: 80,
 	},
 	output: {
