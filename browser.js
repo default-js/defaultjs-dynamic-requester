@@ -1,3 +1,4 @@
+import "@default-js/defaultjs-extdom";
 import GLOBAL from "@default-js/defaultjs-common-utils/src/Global";
 import {Requester} from "./index"
 
@@ -6,3 +7,5 @@ if(!GLOBAL.defaultjs.DynamicRequester){
 	GLOBAL.defaultjs.DynamicRequester = Requester;
 	Requester.VERSION = "${version}";
 }
+
+export {Requester};
