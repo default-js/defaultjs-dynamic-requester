@@ -1,7 +1,7 @@
 import Resolver from "@default-js/defaultjs-expression-language/src/ExpressionResolver";
 
 const buildURL = async (context, url, search, hash) => {
-	const result = new URL(await Resolver.resolveText(url, context, url), location.href);
+	const result = new URL(await Resolver.resolveText(url, context), location.href);
 
 	if (search) {
 		if (!result.searchParams) result.searchParams = new URLSearchParams();
@@ -9,10 +9,10 @@ const buildURL = async (context, url, search, hash) => {
 
 		for (let key in search) {
 			const value = search[key];
-			if (typeof value === "string") params.append(key, await Resolver.resolveText(value, context, value));
+			if (typeof value === "string") params.append(key, await Resolver.resolveText(value, context));
 			else if (value instanceof Array) {
 				for (let item of value) {
-					if (typeof item === "string") params.append(key, await Resolver.resolveText(item, context, item));
+					if (typeof item === "string") params.append(key, await Resolver.resolveText(item, context));
 				}
 			}
 		}
@@ -24,7 +24,7 @@ const buildURL = async (context, url, search, hash) => {
 };
 
 const buildMethod = async (context, method) => {
-	if (method && typeof method === "string") return Resolver.resolveText(method, context, method);
+	if (method && typeof method === "string") return Resolver.resolveText(method, context);
 
 	return "get";
 };
@@ -34,10 +34,10 @@ const buildHeaders = async (context, headers) => {
 	if (headers) {
 		for (let key in headers) {
 			const value = headers[key];
-			if (typeof value === "string") result.append(key, await Resolver.resolveText(value, context, value));
+			if (typeof value === "string") result.append(key, await Resolver.resolveText(value, context));
 			else if (value instanceof Array) {
 				for (let item of value) {
-					if (typeof item === "string") result.append(key, await Resolver.resolveText(item, context, item));
+					if (typeof item === "string") result.append(key, await Resolver.resolveText(item, context));
 				}
 			}
 		}
@@ -47,7 +47,7 @@ const buildHeaders = async (context, headers) => {
 };
 
 const buildBody = async (context, body) => {
-	if (body && typeof body === "string") return Resolver.resolveText(body, context, body);
+	if (body && typeof body === "string") return Resolver.resolveText(body, context);
 
 	return body;
 };

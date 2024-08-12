@@ -1,7 +1,7 @@
 {
 	"name": "@default-js/defaultjs-dynamic-requester",
 	"buildname": "defaultjs-dynamic-requester",
-	"version": "1.0.2",
+	"version": "1.0.3",
 	"description": "Predefine requests as a template and finalize/execute the request with a given context.",
 	"main": "./index.js",
 	"scripts": {
@@ -44,7 +44,6 @@
 	},
 	"homepage": "https://github.com/default-js/defaultjs-dynamic-requester#readme",
 	"dependencies": {
-		"@default-js/defaultjs-extdom": "latest",
 		"@default-js/defaultjs-expression-language": "latest"
 	},
 	"directories": {
