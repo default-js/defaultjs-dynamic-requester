@@ -630,7 +630,7 @@ __webpack_require__.r(__webpack_exports__);
 
 _utils_Utils__WEBPACK_IMPORTED_MODULE_0__["default"].global.defaultjs = _utils_Utils__WEBPACK_IMPORTED_MODULE_0__["default"].global.defaultjs || {};
 _utils_Utils__WEBPACK_IMPORTED_MODULE_0__["default"].global.defaultjs.extdom = _utils_Utils__WEBPACK_IMPORTED_MODULE_0__["default"].global.defaultjs.extdom || {
-	VERSION : "1.0.1",
+	VERSION : "1.0.2",
 	utils : {
 		Utils: _utils_Utils__WEBPACK_IMPORTED_MODULE_0__["default"]
 	}
@@ -2139,7 +2139,7 @@ __webpack_require__.r(__webpack_exports__);
 _default_js_defaultjs_common_utils_src_Global__WEBPACK_IMPORTED_MODULE_1__["default"].defaultjs = _default_js_defaultjs_common_utils_src_Global__WEBPACK_IMPORTED_MODULE_1__["default"].defaultjs || {};
 if(!_default_js_defaultjs_common_utils_src_Global__WEBPACK_IMPORTED_MODULE_1__["default"].defaultjs.DynamicRequester){
 	_default_js_defaultjs_common_utils_src_Global__WEBPACK_IMPORTED_MODULE_1__["default"].defaultjs.DynamicRequester = _index__WEBPACK_IMPORTED_MODULE_2__.Requester;
-	_index__WEBPACK_IMPORTED_MODULE_2__.Requester.VERSION = "1.0.1";
+	_index__WEBPACK_IMPORTED_MODULE_2__.Requester.VERSION = "1.0.2";
 }
 
 
