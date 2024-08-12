@@ -1,4 +1,3 @@
-import "@default-js/defaultjs-extdom";
 import GLOBAL from "@default-js/defaultjs-common-utils/src/Global";
 import {Requester} from "./index"
 
